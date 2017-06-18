@@ -4,7 +4,6 @@
   "description": "Morning Consult Challenge",
   "main": "index.js",
   "scripts": {
-    "hs": "http-server ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jared Edwards",
