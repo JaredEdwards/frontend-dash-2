@@ -1,0 +1,21 @@
+{
+  "name": "frontend-dash-2",
+  "version": "1.0.0",
+  "description": "Morning Consult Challenge",
+  "main": "index.js",
+  "scripts": {
+    "hs": "http-server ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jared Edwards",
+  "license": "ISC",
+  "dependencies": {
+    "del": "^3.0.0",
+    "fast-csv": "^2.4.0",
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "http-server": "^0.10.0",
+    "pug": "^2.0.0-rc.2"
+  }
+}
