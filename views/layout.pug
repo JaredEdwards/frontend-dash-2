@@ -1,11 +1,40 @@
 doctype html
 html
   head
-     title= 'State Poll'
-     meta(name="viewport" content="width=device-width, initial-scale=1")
+    style
+      include ../styles.css
+    title= 'State Poll'
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+    script(src="http://code.highcharts.com/highcharts.js")
+    script(src="http://code.highcharts.com/maps/modules/map.js")
+    script(src="http://code.highcharts.com/maps/modules/boost-canvas.src.js")
+    script(src="http://code.highcharts.com/maps/modules/boost.js")
+    script(src="http://code.highcharts.com/mapdata/countries/us/us-all.js")
+    script(src="https://code.highcharts.com/maps/modules/drilldown.js")
+    script(src="http://code.highcharts.com/highcharts-more.js")
+    script(src="https://code.highcharts.com/modules/solid-gauge.js")
+    script(src="../public/javascript/solidGauge.js")
+    script(src="../public/javascript/nationalMap.js")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
      
   body
-  
-    - var url = data
-  
-    h1= url
+    //- NEED TO BRING IN SVG 
+    //- var dump = (obj) => JSON.stringify(obj, null, 2
+    //- h1= demographic
+    //- h2= veryCool
+    //- h3= cool
+    //- h3= notSoCool
+    //- h3= dontKnow
+    .banner
+      block banner
+      h2 name
+    .img 
+      h1.heading-text Stock Photos of Nice Mountains for #{demographic || 'America'}
+    .map
+      h2= veryCool
+    .footer
+      h2 #{demographic || 'American'} Voters Love Stock Photos of Mountains
+      p Percent of #{demographic || 'American'} voters who say stock photos of mountains are 'Cool' or 'Very cool':
+      #gauge
+      p ALL VOTERS
