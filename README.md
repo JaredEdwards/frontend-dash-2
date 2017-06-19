@@ -3,17 +3,19 @@
 1. Change into a directory of your choosing and then run 
   '$ git clone git@github.com:JaredEdwards/frontend-dash-2.git'
   
-2. Change into the new directory using '$ cd frontend-dash-2'
+2. Run this command to see the state of the project at 6pm "git checkout eb401fcb36a018ee4769d084c1dbc4a4eddd2e5a"
+  
+3. Change into the new directory using '$ cd frontend-dash-2'
 
-3. Once inside the directory run '$ npm install'
+4. Once inside the directory run '$ npm install'
 
-4. Upon completion of the installation, run '$ gulp'
+5. Upon completion of the installation, run '$ gulp'
 
-5. Once the gulp task is completed run '$ cd dist'
+6. Once the gulp task is completed run '$ cd dist'
 
-6. Inside the dist directory run '$ http-server .'
+7. Inside the dist directory run '$ http-server .'
 
-7. Open a new browser window and navigate to 'http://localhost:8080/National'
+8. Open a new browser window and navigate to 'http://localhost:8080/National'
 
 
 # Front-End Developer Take-Home Coding Test
