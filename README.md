@@ -7,7 +7,7 @@
 
 3. Run this command to see the state of the project at 6pm "$ git checkout eb401fcb36a018ee4769d084c1dbc4a4eddd2e5a"
 
-4. Once inside the directory run '$ npm install'
+4. Once the proper commit is checkout out run '$ npm install'
 
 5. Upon completion of the installation, run '$ gulp'
 
