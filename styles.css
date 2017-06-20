@@ -16,7 +16,7 @@ body {
 }
 
 .img {
-  background-image: src('./images/mountain.jpeg');
+  background-image: src(../images/mountain.jpeg);
   background-size:cover;
   height: 32%;
 }

@@ -21,47 +21,51 @@ gulp.task('default', function(){
   stream.pipe(csvStream);
 })
 */
+// /public/images/icons
+const icon = name => fs.readFileSync(`./${name}.svg`);
 
-// icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
-
+const name = 'logo-color';
+const svg = icon(name);
 
 gulp.task('processIndex', function() {
   // place code for your default task here
-  gulp.src('views/layout.pug')
+  gulp
+    .src('views/layout.pug')
     .pipe(pug())
-    .pipe(rename(`index.html`))
-    // .pipe(minify())
-    
+    .pipe(rename(`index.html`)) // .pipe(minify())
     .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('processStates', function(){
+gulp.task('processStates', function() {
   var input = fs.createReadStream('./stock_photo_coolness.csv');
-  var csvStream = csv({headers: true})
-              .on('data', function(data){
-                console.log(data)
-                gulp.src('views/layout.pug')
-                          .pipe(pug( {
-                            data: {
-                              demographic: data.Demographic, 
-                              veryCool: data['Very cool'],
-                              cool: data['Cool'],
-                              notSoCool: data['Not so cool'],
-                              dontKnow: data['Dont Know / No Opinion']
-                            }
-                          }
-                        ))
-                          .pipe(rename(`${data.Demographic}.html`))
-                          .pipe(gulp.dest(`dist/`));
-              })
-              .on('end', function(){
-                console.log('done');
-              })  
-            input.pipe(csvStream);
-})
+  var csvStream = csv({ headers: true })
+    .on('data', function(data) {
+      console.log(data);
+      gulp
+        .src('views/layout.pug')
+        .pipe(
+          pug({
+            data: {
+              demographic: data.Demographic,
+              veryCool: data['Very cool'],
+              cool: data['Cool'],
+              notSoCool: data['Not so cool'],
+              dontKnow: data['Dont Know / No Opinion'],
+              svg: svg
+            }
+          })
+        )
+        .pipe(rename(`${data.Demographic}.html`))
+        .pipe(gulp.dest(`dist/`));
+    })
+    .on('end', function() {
+      console.log('done');
+    });
+  input.pipe(csvStream);
+});
 
-gulp.task('clean', function(){
-  del('dist')
-})
+gulp.task('clean', function() {
+  del('dist');
+});
 
 gulp.task('default', ['processIndex', 'processStates']);

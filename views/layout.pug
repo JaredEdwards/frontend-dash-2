@@ -14,8 +14,8 @@ html
     script(src="https://code.highcharts.com/maps/modules/drilldown.js")
     script(src="http://code.highcharts.com/highcharts-more.js")
     script(src="https://code.highcharts.com/modules/solid-gauge.js")
-    script(src="../public/javascript/solidGauge.js")
-    script(src="../public/javascript/nationalMap.js")
+    script(src="../javascript/solidGauge.js")
+    script(src="../javascript/nationalMap.js")
     meta(name="viewport" content="width=device-width, initial-scale=1")
      
   body
@@ -33,6 +33,7 @@ html
       h1.heading-text Stock Photos of Nice Mountains for #{demographic || 'America'}
     .map
       h2= veryCool
+      h2= svg
     .footer
       h2 #{demographic || 'American'} Voters Love Stock Photos of Mountains
       p Percent of #{demographic || 'American'} voters who say stock photos of mountains are 'Cool' or 'Very cool':
